@@ -607,14 +607,6 @@
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- NAV -->
-  <!-- ============================================================
-    NAVIGATION BAR
-    Fixed at the top so it's always accessible while scrolling.
-    "KD" logo on the left acts as a home button — clicking it
-    scrolls back to the top. The four links on the right let
-    visitors jump directly to any section. The nav highlights
-    the active section in gold as you scroll through the page.
-  ============================================================ -->
   <nav>
     <a href="#hero" class="nav-logo">KD</a>
     <ul class="nav-links">
@@ -625,15 +617,7 @@
     </ul>
   </nav>
 
-  <!-- ============================================================
-    HERO SECTION
-    The first thing visitors see — designed to make an instant
-    impression. Your name is large and bold to be memorable.
-    The short description summarizes who you are in one sentence.
-    Skill badges give a quick snapshot of your expertise areas.
-    "View My Work" scrolls to Projects, "Get in Touch" scrolls
-    to Contact — guiding the visitor toward action immediately.
-  ============================================================ -->
+  <!-- HERO SECTION -->
   <div id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-orb hero-orb-1"></div>
@@ -665,14 +649,7 @@
 
   <div class="divider"></div>
 
-  <!-- ============================================================
-    ABOUT SECTION
-    Written in first person to make the portfolio feel personal
-    and human. Mentions both learning tracks (Data Science &
-    Game Development) so recruiters immediately understand the
-    dual focus. The stat cards add visual credibility at a glance
-    without needing long paragraphs.
-  ============================================================ -->
+  <!-- ABOUT SECTION -->
   <section id="about">
     <p class="section-label reveal">// 01 — About</p>
     <h2 class="section-title reveal">The mind behind<br/>the <em>work</em></h2>
@@ -711,14 +688,7 @@
 
   <div class="divider"></div>
 
-  <!-- ============================================================
-    SKILLS SECTION
-    Grouped into 3 categories (Data & Analytics, Machine Learning,
-    Game Development) so viewers can quickly scan what you know
-    rather than reading a long list. Tags are kept short and
-    recognizable — recruiters scan for keywords, not sentences.
-    Written in a generalized way so new skills can be added easily.
-  ============================================================ -->
+  <!-- SKILLS SECTION -->
   <section id="skills">
     <p class="section-label reveal">// 02 — Skills</p>
     <h2 class="section-title reveal">Tools &amp; <em>technologies</em></h2>
@@ -764,16 +734,7 @@
 
   <div class="divider"></div>
 
-  <!-- ============================================================
-    PROJECTS SECTION
-    Each card links directly to the GitHub repo so recruiters
-    can inspect the actual code. Descriptions are kept concise
-    (2-3 lines) to hold attention — detailed explanations belong
-    inside the repo's README. The tech stack pills highlight the
-    tools used so the card is self-contained and scannable.
-    "More on GitHub" button drives traffic to the full profile
-    for visitors who want to explore beyond these 4 projects.
-  ============================================================ -->
+  <!-- PROJECTS SECTION -->
   <section id="projects">
     <p class="section-label reveal">// 03 — Projects</p>
     <h2 class="section-title reveal">Selected <em>work</em></h2>
@@ -852,46 +813,32 @@
 
   <div class="divider"></div>
 
-  <!-- ============================================================
-    CONTACT SECTION
-    Kept minimal and inviting — one clear email address, one
-    call-to-action button, and three social profile links.
-    The email uses a mailto: link so clicking it opens the
-    visitor's email client directly with your address pre-filled.
-    "Send a Message" does the same for quick outreach.
-    LinkedIn, GitHub, and Kaggle are linked so visitors can
-    verify your professional presence and explore your work.
-  ============================================================ -->
+  <!-- CONTACT SECTION -->
   <section id="contact">
     <p class="section-label reveal" style="text-align:center">// 04 — Contact</p>
     <h2 class="section-title reveal" style="text-align:center">Let's <em>connect</em></h2>
     <p class="contact-note reveal">
       Whether you have a data challenge to solve, a game idea to explore,<br/>or just want to say hello — my inbox is always open.
     </p>
-    <a href="/cdn-cgi/l/email-protection#a7cccec9c0d4cfd2ccc3c6d3d3c695979796e7c0cac6cecb89c4c8ca" class="contact-email reveal">
-      kingshukdatta2001&#64;gmail.com
+    <a href="mailto:kingshukdatta2001@gmail.com" class="contact-email reveal">
+      kingshukdatta2001@gmail.com
     </a>
     <div class="reveal">
-      <a href="/cdn-cgi/l/email-protection#2b4042454c58435e404f4a5f5f4a191b1b1a6b4c464a424705484446" class="btn-primary">Send a Message</a>
+      <a href="mailto:kingshukdatta2001@gmail.com" class="btn-primary">Send a Message</a>
     </div>
     <div class="social-links reveal">
       <a href="https://www.linkedin.com/in/kingshuk-datta/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
       <a href="https://github.com/KingshukDatta" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-      <a href="https://www.kaggle.com/kingshukdatta182001" target="_blank" rel="noopener noreferrer" class="social-link">Kaggle</a>
+      <a href="https://www.kaggle.com/kingshukdatta18" target="_blank" rel="noopener noreferrer" class="social-link">Kaggle</a>
     </div>
   </section>
 
-  <!-- ============================================================
-    FOOTER
-    Simple one-line footer with your name and copyright.
-    Kept minimal so attention stays on the content above.
-    Update the year whenever you refresh the portfolio.
-  ============================================================ -->
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Kingshuk Datta — Crafted with intention</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Cursor glow
     const glow = document.getElementById('cursorGlow');
     document.addEventListener('mousemove', e => {
@@ -916,3 +863,33 @@
 
     // Active nav link highlight on scroll
     const sections = document.querySelectorAll('section[id], div[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.style.color = 'var(--muted)';
+        if (a.getAttribute('href').includes(current)) {
+          a.style.color = 'var(--gold)';
+        }
+      });
+    });
+    
+    // Intersection Observer for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
